@@ -3,14 +3,32 @@ nav {
     background: #0C4B33;
     text-transform: uppercase;
     font-weight: bolder;
-}
-
-.fixed-top {
-    height: 72px;
+    font-size: 13px;
 }
 
 a:hover {
     color: #C9F0DD;
+}
+
+li.nav-item a {
+    color: #fff;
+}
+
+li.nav-item a:hover {
+    color: #C9F0DD;
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+
 }
 
 .sw-custom-link {
@@ -38,10 +56,6 @@ a:hover {
     font-style: normal;
     color: white;
     font-weight: 200;
-}
-
-li.active a {
-    color: #0C3C26;
 }
 
 hr {
