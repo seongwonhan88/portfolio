@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/custom.css' %}">
-    <title>Seongwon Han | {{ context.title }}</title>
+    <title>Seongwon Han | {{ title }}</title>
 </head>
 
 <body>
@@ -23,13 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'main' %}">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Me</a>
+                <a class="nav-link" href="{% url 'about_me' %}">About Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Tech Stack</a>
+                <a class="nav-link" href="{% url 'tech_stack' %}">Tech Stack</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Example</a>
@@ -40,7 +40,11 @@
         </ul>
     </div>
 </nav>
-
+    <div class="copy-banner">
+        <div class="container">
+            <h1 class="sw-custom-banner">{{ banner|safe }}</h1>
+        </div>
+    </div>
 {% block content %}
 {% endblock %}
 
@@ -76,17 +80,13 @@
     </div>
     <div class="footer">
         <div class="container">
-            <div class="footer-logo">
-                <img class="sw-custom-memoji" src={% static 'image/memoji.png' %}/>
-            </div>
-            <ul class="thanks">
-                <li>
-                    <span>Hosting by</span> <a class="rackspace" href="https://www.rackspace.com">Rackspace</a>
-                </li>
-                <li class="design"><span>Design by</span> <a class="threespot" href="https://www.threespot.com">Threespot</a>
-                    <span class="ampersand">&amp;</span> <a class="andrevv" href="http://andrevv.com/"></a></li>
+            <ul class="footer-items">
+                <li><p class="copyright">©2020 Seongwon Han</p></li>
+                <li><a href="https://www.linkedin.com/in/seongwon-han-560b76118/"><i class="fab fa-2x fa-linkedin"></i></a></li>
+                <li><a href="https://twitter.com/SeongwonHan"><i class="fab fa-2x fa-twitter-square"></i></a></li>
+                <li><a href="https://github.com/seongwonhan88"><i class="fab fa-2x fa-github-square"></i></a></li>
             </ul>
-            <p class="copyright">©2020 Seongwon Han</p>
+
         </div>
 
     </div>

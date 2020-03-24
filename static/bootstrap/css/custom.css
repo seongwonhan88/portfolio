@@ -42,6 +42,7 @@ li.nav-item a:hover {
 
 .copy-banner {
     background: #44B78B;
+    text-align: center;
 }
 
 .copy-banner h1 {
@@ -121,15 +122,26 @@ hr {
 }
 
 .list-features i {
-    color: #F1FFF7;
+    color: #fff;
     margin-right: 10px;
     width: 40px;
     height: 40px;
     border-radius: 25px;
-    background: #20AA76;
+    background: skyblue;
     line-height: 1.68em;
     display: inline-block;
     text-align: center;
+}
+
+.list-features img {
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 40px;
+    left: 0;
+    width: 40px;
+    object-fit: cover;
+    transform: rotate(90deg);
+    display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -150,7 +162,18 @@ hr {
         margin-right: 0;
     }
 
+    .list-features img {
+        border-radius: 50%;
+        height: 200px;
+        left: 0;
+        position: absolute;
+        width: 200px;
+        object-fit: cover;
+        transform: rotate(90deg);
+    }
+
     .list-features dt {
+        margin-top: 60px;
         padding: 60px 0 0 245px;
         position: relative;
     }
@@ -203,15 +226,15 @@ hr {
         margin-top: 0 !important;
     }
 
-    [role="contentinfo"] .thanks li {
-        background: none;
-        float: left;
-        clear: none;
-        padding: 0 3% 0 0;
-        width: 30%;
-
+    [role="contentinfo"] .footer-items li {
+        display: inline-block;
+        margin-right: .5rem;
     }
 
+    [role="contentinfo"] .footer-items {
+        display: block;
+        padding-left: 33%;
+    }
 }
 
 .backtotop {
@@ -258,7 +281,7 @@ a.cta {
     font-weight: 400;
     list-style: none;
     margin: 15px 0 0 0;
-    padding: 0 0 30px;
+    padding: 0 0 10px;
 }
 
 [role="contentinfo"] h2 {
@@ -288,11 +311,23 @@ a.cta {
 [role="contentinfo"] .footer {
     background: #0C4B33;
     margin-top: 20px;
-    padding: 10px 0 30px;
+    padding: 10px 0;
     color: #2B8C67;
 }
 
-[role="contentinfo"] .footer .footer-logo {
-    float: left;
-    width: 33%;
+[role="contentinfo"] .footer-items a {
+    color: #2B8C67;
+}
+
+[role="contentinfo"] .footer-items a:hover {
+    color: #C9F0DD;
+}
+
+[role="contentinfo"] .footer-items li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+[role="contentinfo"] .footer-items li:first-child {
+    padding-left: 15px;
 }

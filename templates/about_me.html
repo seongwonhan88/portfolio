@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="sw-custom-container">
+
+        <dl class="list-features">
+            <dt style="{{ style }}">
+                <img src="{% static 'image/selfie.jpeg' %}" alt="selfie"> Background
+            </dt>
+            <dd>
+                <p>I am a web developer living in Ann Arbor, Michigan, USA. <br>
+                    I am passionate about building things on my own and getting my hands dirty. <br>
+                    I majored in computer science from University of Southern Queensland, Australia.
+                    I've been a web developer since 2018, and I love what I do.
+
+                </p>
+            </dd>
+            <dt class="even">
+                <i class="fas fa-code-branch"></i>
+                Work Experience
+            </dt>
+            <dd class="even">
+                <p>I started my career as a military officer in 2011 for Republic of Korea Air Force.
+                    When my service was done I joined World Vision Korea as a system manager in 2015.<br>
+                    After many years of pushing paperwork, I decided to turn my career in 2018.
+                    I took a bootcamp in Seoul, and started my first job as a developer at Marshall Goldsmith Coaching.
+                </p>
+                <a class="link-readmore" href="#">Download my Resumé</a>
+            </dd>
+            <dt>
+                <i class="fas fa-sitemap"></i>
+                More about me
+            </dt>
+            <dd>
+                <p>I'm a big fan of sports. Basketball is my favorite and I play weekly pick-up games<br>
+                    I also love building Lego, playing Xbox,
+                </p>
+                <a class="link-readmore" href="#">follow me on my instagram</a>
+            </dd>
+        </dl>
+        <a href="#top" class="backtotop"><i class="fas fa-chevron-up"></i> Back to Top</a>
+    </div>
+{% endblock %}
+
