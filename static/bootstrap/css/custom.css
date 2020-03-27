@@ -31,10 +31,6 @@ li.nav-item a:hover {
     color: #fff;
 }
 
-.navbar-toggler-icon {
-
-}
-
 .sw-custom-link {
     margin-right: 1rem;
     color: #fff;
@@ -204,7 +200,7 @@ hr {
 
     .list-features dd.even {
         padding-left: 0;
-        padding-right: 245px;
+        padding-right: 220px;
     }
 
     .backtotop {
@@ -348,6 +344,7 @@ a.cta {
 ul.short-list {
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
     padding-left: 10px;
+    font-size: 1.2rem;
 }
 
 .short-list li {
