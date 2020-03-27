@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from portfolio.views import index, about_me, tech_stack
+from portfolio.views import index, about_me, skills
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='main'),
     path('about-me/', about_me, name='about_me'),
-    path('tech-stack/', tech_stack, name='tech_stack')
+    path('skills/', skills, name='skills')
 ]

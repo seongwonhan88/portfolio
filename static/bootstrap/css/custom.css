@@ -10,6 +10,10 @@ a:hover {
     color: #C9F0DD;
 }
 
+li.nav-item a.active {
+    color: #44B78B;
+}
+
 li.nav-item a {
     color: #fff;
 }
@@ -149,6 +153,11 @@ hr {
         margin-top: 20px;
     }
 
+    .list-features {
+        padding-bottom: 40px;
+    }
+
+
     .list-features i {
         border-radius: 100px;
         font-size: 8rem;
@@ -234,6 +243,10 @@ hr {
     [role="contentinfo"] .footer-items {
         display: block;
         padding-left: 33%;
+    }
+
+    .rsp-break {
+        display: none;
     }
 }
 
@@ -330,4 +343,13 @@ a.cta {
 
 [role="contentinfo"] .footer-items li:first-child {
     padding-left: 15px;
+}
+
+ul.short-list {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
+    padding-left: 10px;
+}
+
+.short-list li {
+    margin: 20px 10px;
 }
