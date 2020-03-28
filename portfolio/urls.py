@@ -20,6 +20,6 @@ from portfolio.views import index, about_me
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='main'),
-    path('about-me/', about_me, name='about_me'),
+    path('', about_me, name='main'),
+    # path('about-me/', about_me, name='about_me'),
 ]

@@ -2,20 +2,14 @@
 {% load static %}
 {% block content %}
     <div class="sw-custom-container">
+        <div class="top-cover">
+            <img src="{% static 'image/intro-cutout.png' %}" alt="selfie">
+        </div>
+        <div class="top-cover-small">
+            <img src="{% static 'image/intro-cutout-small.png' %}" alt="selfie">
+        </div>
 
         <dl class="list-features">
-            <dt style="{{ style }}">
-                <img src="{% static 'image/selfie.jpeg' %}" alt="selfie"> About Me
-            </dt>
-            <dd>
-                <ul class="short-list">
-                    <li><b>Name, Age</b> : <em>Seongwon Han, {{ age }}</em></li>
-                    <li><b>Position</b> : <em>Web/Back-end Developer</em></li>
-                    <li><b>Location</b> : <em>Ann Arbor, Michigan, USA</em></li>
-                </ul>
-
-            </dd>
-
             <dt class="even">
                 <i class="fab fa-python"></i>
                 Python & Django
@@ -34,8 +28,7 @@
                 Amazon Web Service Certified
             </dt>
             <dd>
-                <p>I am a certified <em>AWS Solutions Architect - Associate</em>.
-                    .</p>
+                <p>I am a certified <em>AWS Solutions Architect - Associate</em>. </p>
             </dd>
 
 
@@ -64,7 +57,7 @@
             </dd>
         </dl>
         <div class="section">
-            <a href="#" class="cta">Download my <em>Resumé</em></a>
+            <a href="{% static 'download/CV_SeongwonHan.pdf' %}" class="cta" download="seongwonhan_resume">Download my <em>Resumé</em></a>
         </div>
         <a href="#top" class="backtotop"><i class="fas fa-chevron-up"></i> Back to Top</a>
     </div>
