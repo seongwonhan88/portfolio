@@ -6,6 +6,9 @@ FORM = 'form'
 EMAIL_ADDRESS = 'seongwonhan88@gmail.com'
 SUBJECT_DEFAULT = 'Hello Seongwon,'
 
+DEFAULT_REPLY_TEMPLATE = 'email/default_reply.html'
+DEFAULT_NOTICE_TEMPLATE = 'email/default_notice.html'
+
 TITLE_HOME = 'Home'
 BANNER_HOME = 'My name is <em>Seongwon</em>. <br class="rsp-break"> I\'m a <em>Web Developer</em> living in Ann Arbor, MI'
 
