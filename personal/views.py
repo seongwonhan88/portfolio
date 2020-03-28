@@ -29,5 +29,6 @@ def contact_me(request):
         form = ContactInfoForm(request.POST)
         if form.is_valid():
             form.save()
+            # form.data['email']
             return redirect('main')
     return render(request, 'contact.html', context)
