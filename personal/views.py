@@ -28,7 +28,6 @@ def contact_me(request):
     if request.method == 'POST':
         form = ContactInfoForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             return redirect('main')
     return render(request, 'contact.html', context)
