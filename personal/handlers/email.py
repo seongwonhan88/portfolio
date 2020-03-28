@@ -8,7 +8,8 @@ def set_default_reply(target_email, fullname):
               f"this is an auto generated email letting you know that your email has been successfully sent. " \
               f"Cheers, " \
               f"Seongwon"
-    return send_email(target_email, subject, message)
+    return send_email(target_email, subject, message, to_self=True)
+
 
 def relay_portfolio_message(customer_email, customer_name, customer_message, message_type):
     subject = f'PORTFOLIO: message from {customer_name}'
