@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from portfolio.views import index, about_me
+from personal.views import about_me, contact_me
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', about_me, name='main'),
-    # path('about-me/', about_me, name='about_me'),
+    path('contact_me/', contact_me, name='contact-me')
 ]
