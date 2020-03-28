@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from personal.handlers.email import set_default_reply, relay_portfolio_message
 from personal.settings import TITLE, BANNER, EMAIL
 
 
@@ -29,6 +30,8 @@ def contact_me(request):
         form = ContactInfoForm(request.POST)
         if form.is_valid():
             form.save()
-            # form.data['email']
+            self_notice = relay_portfolio_message(form.data['email'], form.data['name'], form.data['message_content'], form.data['message_type'])
+            if self_notice.status_code == 200:
+                set_default_reply(form.data['email'], form.data['name'])
             return redirect('main')
     return render(request, 'contact.html', context)

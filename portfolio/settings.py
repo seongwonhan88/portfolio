@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'personal',
+    'common_handler',
     'widget_tweaks', # https://pypi.org/project/django-widget-tweaks/
     'django_extensions',
 ]
@@ -127,3 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+
+# Mailgun settings
+MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY', None)
