@@ -14,5 +14,7 @@ BANNER_HOME = 'My name is <em>Seongwon</em>. <br class="rsp-break"> I\'m a <em>W
 
 TITLE_CONTACT = 'Contact Me'
 BANNER_CONTACT = 'Let\'s <em>get in touch!</em>'
-
 CHOICES = [('general', 'General Interest'), ('project', 'Project Offer'), ('bug', 'Bug Report')]
+
+TITLE_SAMPLE_API = 'Sample API'
+BANNER_SAMPLE_API = 'Check out the latest <em>COVID19 updates</em>'

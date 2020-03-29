@@ -11,7 +11,7 @@ def about_me(request):
         BANNER: BANNER_HOME,
         'style': 'border-top: 1px solid #fff',
     }
-    return render(request, 'about_me.html', context)
+    return render(request, 'pages/about_me.html', context)
 
 
 def contact_me(request):
@@ -34,4 +34,13 @@ def contact_me(request):
             if self_notice.status_code == 200:
                 set_default_reply(form.data['email'], form.data['name'])
             return redirect('main')
-    return render(request, 'contact.html', context)
+    return render(request, 'pages/contact.html', context)
+
+
+def sample_api(request):
+    from personal.settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API
+    context = {
+        TITLE: TITLE_SAMPLE_API,
+        BANNER: BANNER_SAMPLE_API,
+    }
+    return render(request, 'pages/sample_api.html', context)
