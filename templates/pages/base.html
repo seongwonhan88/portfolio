@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/custom.css' %}">
     <title>Seongwon Han | {{ title }}</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="{% static 'bootstrap/js/custom.js' %}"></script>
 </head>
 
 <body>
@@ -26,10 +26,10 @@
                 <a class="nav-link {{ index }}" href="{% url 'main' %}">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'sample-api' %}">Sample API</a>
+                <a class="nav-link" href="{% url 'contact-me' %}">Contact Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact-me' %}">Contact Me</a>
+                <a class="nav-link" href="{% url 'sample-api' %}">Sample API</a>
             </li>
         </ul>
     </div>
@@ -58,7 +58,6 @@
 </div>
 
 <script src="https://kit.fontawesome.com/d313c5c182.js" crossorigin="anonymous"></script>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -68,29 +67,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script>
-    function getStateData() {
-        removeAllChildren();
-
-        let state = document.getElementById('selectState').value;
-        axios.get(`/api/covid_19/states/?state=${state}`).then(function (response) {
-            for (const [key, value] of Object.entries(response.data[0])) {
-                let node = document.createElement("li");
-                var textnode = document.createTextNode(`${key}: ${value}`);
-                node.appendChild(textnode);
-                document.getElementById("stateStatus").appendChild(node);
-            }
-        });
-    }
-
-    function removeAllChildren() {
-        let list = document.getElementById('stateStatus');
-        let first = list.firstElementChild;
-        while (first) {
-            list.removeChild(first);
-            first = list.firstElementChild;
-        }
-    }
-</script>
 </body>
 </html>

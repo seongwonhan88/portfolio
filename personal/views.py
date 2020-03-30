@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from personal.handlers.email import set_default_reply, relay_portfolio_message
-from personal.settings import TITLE, BANNER, EMAIL
+from personal.settings import TITLE, BANNER, EMAIL, STYLE, STATES
 
 
 def about_me(request):
@@ -9,7 +9,7 @@ def about_me(request):
     context = {
         TITLE: TITLE_HOME,
         BANNER: BANNER_HOME,
-        'style': 'border-top: 1px solid #fff',
+        STYLE: 'border-top: 1px solid #fff',
     }
     return render(request, 'pages/about_me.html', context)
 
@@ -39,11 +39,12 @@ def contact_me(request):
 
 def sample_api(request):
     from common_handler.settings import STATES_LIST
-    from personal.settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API
+    from personal.settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API, DISCLAIMER_SAMPLE_API, DISCLAIMER
     context = {
         TITLE: TITLE_SAMPLE_API,
         BANNER: BANNER_SAMPLE_API,
-        'style': 'border-top: 1px solid #fff',
-        'states': STATES_LIST
+        DISCLAIMER: DISCLAIMER_SAMPLE_API,
+        STYLE: 'border-top: 1px solid #fff',
+        STATES: STATES_LIST
     }
     return render(request, 'pages/sample_api.html', context)
