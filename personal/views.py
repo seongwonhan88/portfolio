@@ -38,9 +38,12 @@ def contact_me(request):
 
 
 def sample_api(request):
+    from common_handler.settings import STATES_LIST
     from personal.settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API
     context = {
         TITLE: TITLE_SAMPLE_API,
         BANNER: BANNER_SAMPLE_API,
+        'style': 'border-top: 1px solid #fff',
+        'states': STATES_LIST
     }
     return render(request, 'pages/sample_api.html', context)

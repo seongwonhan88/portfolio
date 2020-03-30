@@ -2,4 +2,34 @@
 {% load widget_tweaks %}
 {% load static %}
 {% block content %}
+    <div class="sw-custom-container">
+        <dl class="list-features">
+            <dt style="{{ style }}">
+                <i class="fas fa-shield-virus"></i>
+                COVID 19 status
+            </dt>
+            <dd>
+                <form class="form-group" style="margin-top: 1rem;">
+                    <label for="#selectState">Select the state</label>
+                    <select class="form-control" name="" id="selectState">
+                        {% for state in states %}
+                            {% if state == 'Michigan' %}
+                                <option selected>{{ state }}</option>
+                            {% else %}
+                                <option>{{ state }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <button onclick="getStateData()" type="button" class="btn btn-outline-success" id="checkStatus">
+                        Check Status
+                    </button>
+                </form>
+                <ul id="stateStatus">
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+
 {% endblock %}

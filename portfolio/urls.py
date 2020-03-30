@@ -23,6 +23,5 @@ urlpatterns = [
     path('', about_me, name='main'),
     path('contact_me/', contact_me, name='contact-me'),
     path('sample_api/', sample_api, name='sample-api'),
-
     path('api/', include('common_handler.urls')),
 ]

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/custom.css' %}">
     <title>Seongwon Han | {{ title }}</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -47,18 +49,16 @@
             <a href="https://twitter.com/SeongwonHan"><i class="fab fa-2x fa-twitter-square"></i></a>
             <a href="https://github.com/seongwonhan88"><i class="fab fa-2x fa-github-square"></i></a>
         </div>
-
     </div>
     <div class="footer">
         <div class="container">
             <p class="copyright">©2020 Seongwon Han</p>
         </div>
-
     </div>
-
 </div>
 
 <script src="https://kit.fontawesome.com/d313c5c182.js" crossorigin="anonymous"></script>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -68,5 +68,29 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script>
+    function getStateData() {
+        removeAllChildren();
+
+        let state = document.getElementById('selectState').value;
+        axios.get(`/api/covid_19/states/?state=${state}`).then(function (response) {
+            for (const [key, value] of Object.entries(response.data[0])) {
+                let node = document.createElement("li");
+                var textnode = document.createTextNode(`${key}: ${value}`);
+                node.appendChild(textnode);
+                document.getElementById("stateStatus").appendChild(node);
+            }
+        });
+    }
+
+    function removeAllChildren() {
+        let list = document.getElementById('stateStatus');
+        let first = list.firstElementChild;
+        while (first) {
+            list.removeChild(first);
+            first = list.firstElementChild;
+        }
+    }
+</script>
 </body>
 </html>
