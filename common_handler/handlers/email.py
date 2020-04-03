@@ -1,7 +1,7 @@
 import requests
 
 from common_handler.settings import MAILGUN_DOMAIN
-from portfolio.settings import MAILGUN_API_KEY
+from portfolio.settings.base import MAILGUN_API_KEY
 
 
 def send_email(target_email, subject, content, to_self=False):

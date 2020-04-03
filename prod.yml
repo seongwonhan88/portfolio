@@ -16,11 +16,14 @@ services:
       - aws_secret_access_key
       - aws_storage_bucket_name
       - MAILGUN_API_KEY
-      - PORTFOLIO_DEFAULT_DB_NAME
-      - PORTFOLIO_DEFAULT_DB_USER
-      - PORTFOLIO_DEFAULT_DB_PASSWORD
-      - PORTFOLIO_DEFAULT_DB_HOST
+      - PORTFOLIO_LOCAL_DB_NAME
+      - PORTFOLIO_LOCAL_DB_USER
+      - PORTFOLIO_LOCAL_DB_PASSWORD
+      - PORTFOLIO_LOCAL_DB_HOST
+      - DJANGO_SETTINGS_MODULE=portfolio.settings.prod
     command: gunicorn portfolio.wsgi --bind 0.0.0.0:8000
+    depends_on:
+      - postgres
   postgres:
     image: postgres
     environment:
@@ -37,4 +40,6 @@ services:
       dockerfile: docker/prod/nginx/Dockerfile
     ports:
       - 8080:80
+    depends_on:
+      - web
 

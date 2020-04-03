@@ -10,15 +10,14 @@ services:
     ports:
       - 8000:8000
     environment:
-      - aws_access_key_id
-      - aws_secret_access_key
-      - aws_storage_bucket_name
       - MAILGUN_API_KEY
-      - PORTFOLIO_DEFAULT_DB_NAME
-      - PORTFOLIO_DEFAULT_DB_USER
-      - PORTFOLIO_DEFAULT_DB_PASSWORD
-      - PORTFOLIO_DEFAULT_DB_HOST
+      - PORTFOLIO_LOCAL_DB_NAME
+      - PORTFOLIO_LOCAL_DB_USER
+      - PORTFOLIO_LOCAL_DB_PASSWORD
+      - PORTFOLIO_LOCAL_DB_HOST
     command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - postgres
   postgres:
     image: postgres
     environment:
