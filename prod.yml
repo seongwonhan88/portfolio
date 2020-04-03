@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  pgdata:
 
 services:
   web:
@@ -25,6 +27,8 @@ services:
       POSTGRES_USER: portfolio
       POSTGRES_DB: portfolio
       POSTGRES_PASSWORD: portfolio
+    volumes:
+      - pgdata:/var/lib/postresql/data
     ports:
       - 5432:5432
   nginx:
