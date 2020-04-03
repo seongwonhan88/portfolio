@@ -9,3 +9,18 @@ services:
       - .:/app
     ports:
       - 8000:8000
+    environment:
+      - aws_access_key_id
+      - aws_secret_access_key
+      - aws_storage_bucket_name
+      - MAILGUN_API_KEY
+    command: gunicorn portfolio.wsgi --bind 0.0.0.0:8000
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_DB: portfolio
+      POSTGRES_PASSWORD: portfolio
+    ports:
+      - 5432:5432
+
