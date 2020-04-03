@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': os.environ.get('PORTFOLIO_DEFAULT_DB_NAME', 'portfolio'),
         'USER': os.environ.get('PORTFOLIO_DEFAULT_DB_USER', 'portfolio'),
         'PASSWORD': os.environ.get('PORTFOLIO_DEFAULT_DB_PASSWORD', 'portfolio'),
-        'HOST': os.environ.get('PORTFOLIO_DEFAULT_DB_USER', 'portfolio'),
+        'HOST': os.environ.get('PORTFOLIO_DEFAULT_DB_HOST', 'postgres'),
         'PORT': 5432
     }
 }

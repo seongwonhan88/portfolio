@@ -14,6 +14,10 @@ services:
       - aws_secret_access_key
       - aws_storage_bucket_name
       - MAILGUN_API_KEY
+      - PORTFOLIO_DEFAULT_DB_NAME
+      - PORTFOLIO_DEFAULT_DB_USER
+      - PORTFOLIO_DEFAULT_DB_PASSWORD
+      - PORTFOLIO_DEFAULT_DB_HOST
     command: gunicorn portfolio.wsgi --bind 0.0.0.0:8000
   postgres:
     image: postgres
