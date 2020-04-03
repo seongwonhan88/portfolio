@@ -6,9 +6,9 @@ ENV PYTHONUNBUFFERED 1
 COPY . /app
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements/prod.txt
 
-COPY docker/python/entrypoint.sh /entrypoint.sh
+COPY docker/prod/python/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
