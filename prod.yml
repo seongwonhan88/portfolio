@@ -16,10 +16,10 @@ services:
       - aws_secret_access_key
       - aws_storage_bucket_name
       - MAILGUN_API_KEY
-      - PORTFOLIO_LOCAL_DB_NAME
-      - PORTFOLIO_LOCAL_DB_USER
-      - PORTFOLIO_LOCAL_DB_PASSWORD
-      - PORTFOLIO_LOCAL_DB_HOST
+      - PORTFOLIO_PROD_DB_NAME
+      - PORTFOLIO_PROD_DB_USER
+      - PORTFOLIO_PROD_DB_PASSWORD
+      - PORTFOLIO_PROD_DB_HOST
       - DJANGO_SETTINGS_MODULE=portfolio.settings.prod
     command: gunicorn portfolio.wsgi --bind 0.0.0.0:8000
     depends_on:

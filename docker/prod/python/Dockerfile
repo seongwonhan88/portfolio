@@ -15,4 +15,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 
 
-#CMD bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn portfolio.wsgi --bind 0.0.0.0:8000"
+#CMD bash -c "python manage.py makemigrations && python maneage.py migrate && gunicorn portfolio.wsgi --bind 0.0.0.0:8000"
