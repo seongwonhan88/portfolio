@@ -18,10 +18,15 @@
 - Docker container is used. I have failed and failed to learn Docker/Containerization, BUT I finally got it to work! 
 - Learning channel: [Christian Kreuzberger](https://youtu.be/90LCcim-wHQ) (it'll take some time but for Django users it's very comprehensive)
 
-## 5. This is getting much bigger than I expected 
-- My original plan was to just build a simple portfolio site for learning CSS and just toss it into AWS Elasticbeanstalk
-- Obviously more than that happened as I kept learning and attaching some more.
-- Good practice for setting up production environment as well.. 
+## 5. Deployment Detail 
+- The service is up and running. You can check out at [https://seongwonhan.com](https:seongwonhan.com)
+- I struggled through ECS and decided to take a course
+- In the mean time I provisioned an AWS EC2 instance and deployed my service using shell script 
+ > Nginx is serving as a reverse proxy
+ > Gunicorn is used as a HTTP -> WSGI server 
+ > AWS components being used are : EC2, ALB, ROUTE53, CERTIFICATE MANAGER, S3
 
-## 6. Stay-home project continues!  
-- Stay tuned for more updates..
+## 6. Stay-Home project continues
+- My goal is to be able to deploy with ECS. 
+- Also need to build a strong CI/CD environment. 
+- Study continues... 
