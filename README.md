@@ -19,7 +19,7 @@
 - Learning channel: [Christian Kreuzberger](https://youtu.be/90LCcim-wHQ) (it'll take some time but for Django users it's very comprehensive)
 
 ## 5. Deployment Detail 
-- The service is up and running. You can check out at [https://seongwonhan.com](https:seongwonhan.com)
+- The service is up and running. You can check out at [https://seongwonhan.com](https://seongwonhan.com)
 - I struggled through ECS and decided to take a course
 - In the mean time I provisioned an AWS EC2 instance and deployed my service using shell script 
  > Nginx is serving as a reverse proxy
