@@ -22,9 +22,9 @@
 - The service is up and running. You can check out at [https://seongwonhan.com](https://seongwonhan.com)
 - I struggled through ECS and decided to take a course
 - In the mean time I provisioned an AWS EC2 instance and deployed my service using shell script 
- > Nginx is serving as a reverse proxy
- > Gunicorn is used as a HTTP -> WSGI server 
- > AWS components being used are : EC2, ALB, ROUTE53, CERTIFICATE MANAGER, S3
+ > - Nginx is serving as a reverse proxy 
+ > - Gunicorn is used as a HTTP -> WSGI server  
+ > - AWS components being used are : EC2, ALB, ROUTE53, CERTIFICATE MANAGER, S3 
 
 ## 6. Stay-Home project continues
 - My goal is to be able to deploy with ECS. 
