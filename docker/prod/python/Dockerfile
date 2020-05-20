@@ -1,5 +1,4 @@
 FROM python:3.6
-MAINTAINER seongwonhan88@localhost
 
 ENV PYTHONUNBUFFERED 1
 

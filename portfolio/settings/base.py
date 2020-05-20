@@ -13,14 +13,16 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from .manager import get_secret
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
+secrets = get_secret()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l=b_1hunxs9k=$iv=&=qnk&v15ira_j4&s*z(57&h1v6+nl51+'
+SECRET_KEY = secrets['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -114,5 +116,5 @@ STATICFILES_DIRS = [
 ]
 
 # Mailgun settings
-MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY', None)
+MAILGUN_API_KEY = secrets['mailgun_api_key']
 

@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 
-from personal.handlers.email import set_default_reply, relay_portfolio_message
-from personal.settings import TITLE, BANNER, EMAIL, STYLE, STATES
+from .handlers.email import set_default_reply, relay_portfolio_message
+from .settings import TITLE, BANNER, EMAIL, STYLE, STATES
 
 
 def about_me(request):
-    from personal.settings import BANNER_HOME, TITLE_HOME
+    from .settings import BANNER_HOME, TITLE_HOME
     context = {
         TITLE: TITLE_HOME,
         BANNER: BANNER_HOME,
@@ -15,8 +15,8 @@ def about_me(request):
 
 
 def contact_me(request):
-    from personal.forms import ContactInfoForm
-    from personal.settings import EMAIL_ADDRESS, SUBJECT_DEFAULT, TITLE_CONTACT, BANNER_CONTACT, FORM
+    from .forms import ContactInfoForm
+    from .settings import EMAIL_ADDRESS, SUBJECT_DEFAULT, TITLE_CONTACT, BANNER_CONTACT, FORM
     context = {
         TITLE: TITLE_CONTACT,
         BANNER: BANNER_CONTACT,
@@ -38,8 +38,8 @@ def contact_me(request):
 
 
 def sample_api(request):
-    from common_handler.settings import STATES_LIST
-    from personal.settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API, DISCLAIMER_SAMPLE_API, DISCLAIMER
+    from ..common_handler.settings import STATES_LIST
+    from .settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API, DISCLAIMER_SAMPLE_API, DISCLAIMER
     context = {
         TITLE: TITLE_SAMPLE_API,
         BANNER: BANNER_SAMPLE_API,

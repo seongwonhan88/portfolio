@@ -1,6 +1,6 @@
 from django.db import models
 
-from personal.settings import CHOICES
+from .settings import CHOICES
 
 
 class ContactInfo(models.Model):

@@ -12,34 +12,5 @@ services:
     ports:
       - 8000:8000
     environment:
-      - aws_access_key_id
-      - aws_secret_access_key
-      - aws_storage_bucket_name
-      - MAILGUN_API_KEY
-      - PORTFOLIO_PROD_DB_NAME
-      - PORTFOLIO_PROD_DB_USER
-      - PORTFOLIO_PROD_DB_PASSWORD
-      - PORTFOLIO_PROD_DB_HOST
       - DJANGO_SETTINGS_MODULE=portfolio.settings.prod
     command: gunicorn portfolio.wsgi --bind 0.0.0.0:8000
-    depends_on:
-      - postgres
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_USER: portfolio
-      POSTGRES_DB: portfolio
-      POSTGRES_PASSWORD: portfolio
-    volumes:
-      - pgdata:/var/lib/postresql/data
-    ports:
-      - 5432:5432
-  nginx:
-    build:
-      context: .
-      dockerfile: docker/prod/nginx/Dockerfile
-    ports:
-      - 80:80
-    depends_on:
-      - web
-
