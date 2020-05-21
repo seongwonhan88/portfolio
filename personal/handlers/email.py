@@ -1,6 +1,6 @@
 from django.template.loader import render_to_string
 
-from portfolio.common_handler.handlers import send_email
+from common_handler.handlers import send_email
 from ..settings import EMAIL_ADDRESS, DEFAULT_REPLY_TEMPLATE, DEFAULT_NOTICE_TEMPLATE
 
 

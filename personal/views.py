@@ -38,7 +38,7 @@ def contact_me(request):
 
 
 def sample_api(request):
-    from ..common_handler.settings import STATES_LIST
+    from common_handler.settings import STATES_LIST
     from .settings import TITLE_SAMPLE_API, BANNER_SAMPLE_API, DISCLAIMER_SAMPLE_API, DISCLAIMER
     context = {
         TITLE: TITLE_SAMPLE_API,

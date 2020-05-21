@@ -2,7 +2,7 @@
 import requests
 
 from ..settings import MAILGUN_DOMAIN
-from ...portfolio.settings.base import MAILGUN_API_KEY
+from django.conf import settings
 
 
 def send_email(target_email, subject, content, to_self=False):
@@ -20,5 +20,5 @@ def send_email(target_email, subject, content, to_self=False):
 
     if to_self:
         data["from"] = "Portfolio Notice <no-reply@mail.seongwonhan.com>"
-    response = requests.post(MAILGUN_DOMAIN, auth=("api", MAILGUN_API_KEY), data=data)
+    response = requests.post(MAILGUN_DOMAIN, auth=("api", settings.MAILGUN_API_KEY), data=data)
     return response
