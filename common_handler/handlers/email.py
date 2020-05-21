@@ -1,3 +1,4 @@
+
 import requests
 
 from ..settings import MAILGUN_DOMAIN

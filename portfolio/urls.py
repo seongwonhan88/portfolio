@@ -16,12 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from ..personal.views import about_me, contact_me, sample_api
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', about_me, name='main'),
-    path('contact_me/', contact_me, name='contact-me'),
-    path('sample_api/', sample_api, name='sample-api'),
+    path('', include('personal.urls')),
     path('api/', include('common_handler.urls')),
 ]

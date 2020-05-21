@@ -1,7 +1,7 @@
 from django.template.loader import render_to_string
 
-from common_handler.handlers.email import send_email
-from personal.settings import EMAIL_ADDRESS, DEFAULT_REPLY_TEMPLATE, DEFAULT_NOTICE_TEMPLATE
+from portfolio.common_handler.handlers import send_email
+from ..settings import EMAIL_ADDRESS, DEFAULT_REPLY_TEMPLATE, DEFAULT_NOTICE_TEMPLATE
 
 
 def set_default_reply(target_email, fullname):
