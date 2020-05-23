@@ -1,10 +1,11 @@
 
 import requests
 
+from portfolio.celery import app
 from ..settings import MAILGUN_DOMAIN
 from django.conf import settings
 
-
+@app.task
 def send_email(target_email, subject, content, to_self=False):
     """
     Check the documentation for detail usages of mailgun API
@@ -21,4 +22,4 @@ def send_email(target_email, subject, content, to_self=False):
     if to_self:
         data["from"] = "Portfolio Notice <no-reply@mail.seongwonhan.com>"
     response = requests.post(MAILGUN_DOMAIN, auth=("api", settings.MAILGUN_API_KEY), data=data)
-    return response
+    return response.status_code

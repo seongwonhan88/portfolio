@@ -31,7 +31,7 @@ def contact_me(request):
         if form.is_valid():
             form.save()
             self_notice = relay_portfolio_message(form.data['email'], form.data['name'], form.data['message_content'], form.data['message_type'])
-            if self_notice.status_code == 200:
+            if self_notice == 200:
                 set_default_reply(form.data['email'], form.data['name'])
             return redirect('main')
     return render(request, 'pages/contact.html', context)

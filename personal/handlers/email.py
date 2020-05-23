@@ -8,7 +8,7 @@ def set_default_reply(target_email, fullname):
     subject = 'Hello, thank you for sending me an email'
     data = {'name': fullname}
     html_content = render_to_string(DEFAULT_REPLY_TEMPLATE, data)
-    return send_email(target_email, subject, html_content)
+    return send_email.delay(target_email, subject, html_content)
 
 
 def relay_portfolio_message(customer_email, customer_name, customer_message, message_type):
@@ -22,4 +22,4 @@ def relay_portfolio_message(customer_email, customer_name, customer_message, mes
         'message_type': message_type
     }
     html_content = render_to_string(DEFAULT_NOTICE_TEMPLATE, data)
-    return send_email(EMAIL_ADDRESS, subject, html_content, to_self=True)
+    return send_email.delay(EMAIL_ADDRESS, subject, html_content, to_self=True)

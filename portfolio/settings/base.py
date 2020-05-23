@@ -34,7 +34,14 @@ CORS_ORIGIN_WHITELIST = ('http://127.0.0.1:8000', 'http://localhost:8000')
 
 # Application definition
 
-INSTALLED_APPS = []
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,3 +125,25 @@ STATICFILES_DIRS = [
 # Mailgun settings
 MAILGUN_API_KEY = secrets['mailgun_api_key']
 
+# REDIS SETTINGS
+REDIS_HOST = os.environ.get('REDIS_HOST', 'localhost')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
+REDIS_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/1'
+
+# CELERY
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+
+# # CACHE
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": REDIS_URL,
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient"
+#         },
+#     }
+# }
